@@ -1,0 +1,10 @@
+# Ignore extensionless files
+*
+!/**/
+!*.*
+
+# Rust
+rustlib/target
+
+# Mac OS
+.DS_Store
