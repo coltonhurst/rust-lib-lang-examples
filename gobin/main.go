@@ -2,15 +2,13 @@ package main
 
 import (
 	"fmt"
+	rl "github.com/coltonhurst/rust-lib-lang-examples"
 )
 
-/*
-#cgo LDFLAGS: -L ../rustlib/target/debug -lrustlib
-extern int add(int left, int right);
-*/
-import "C"
-
 func main() {
-	result := C.add(5, 3)
+	result, err := rl.RunCommand(5, 3)
+	if err != nil {
+		fmt.Println(err)
+	}
 	fmt.Println("The sum is:", result)
 }
