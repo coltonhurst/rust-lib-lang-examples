@@ -23,11 +23,15 @@ Binary Programs
 
 ### Leaking Paths
 
-While attempting to keep the examples as basic as possible, it might be important to note that some paths are leaked in the built binaries. You can see this by using a binay inspection tool like `fq`.
+While attempting to keep the examples as basic as possible, it might be important to note that some paths are leaked in the built C binary. You can see this by using a binay inspection tool like `fq`.
 
 To see this on a mac:
 1. `brew install wader/tap/fq`
 2. After building `cbin/main.c`, run: `fq dd ./main | less`
+
+**The Fix**
+
+You can fix this by stripping extra info during the linking process with `-s`, like: `gcc main.c -L../rustlib/target/debug -lrustlib -o main -s`
 
 ## Thanks
 
