@@ -14,4 +14,4 @@ Binary Programs
 - [cbin](./cbin/): this is the C binary project that uses the rustlib project
     - Build this with: `gcc main.c -L../rustlib/target/debug -lrustlib -o main`
 - [gobin](./gobin): this is the Go binary project that uses the rustlib project
-    - Build this with: `todo`
+    - Build this with: `go build`
